@@ -1,13 +1,28 @@
-# tech-legacy
+<div align="center">
+  <a href="https://github.com/tech-legacy/tech-legacy">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-## 为下一代提供全面的数字技能教育
+  <h3 align="center">Tech Legacy</h3>
+
+  <p align="center">
+    为下一代提供全面的数字技能教育
+    <br />
+    <a href="https://github.com/tech-legacy/tech-legacy"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/tech-legacy/tech-legacy/README.md">中文</a>
+    ·
+    <a href="https://github.com/tech-legacy/tech-legacy/README.en-us.md">English</a>
+  </p>
+</div>
+
+# 介绍
 
 1. 如何正确使用数码产品（手机、电脑、互联网等）
 2. 如何正确使用搜索引擎（Google、ChatGPT等）
 3. 个人重要资料和隐私数据传给下一代（平台账号、数据备份等）
 
-## Providing Comprehensive Digital Skills Education for the Next Generation
+# 路线图
 
-1. How to properly use digital devices (phones, computers, the internet, etc.)
-2. How to properly use search engines (Google, ChatGPT, etc.)
-3. Passing down important personal data and privacy records to the next generation (platform accounts, data backup, etc.)
+- [ ] TODO
