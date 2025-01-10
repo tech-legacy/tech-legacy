@@ -1,35 +1,49 @@
-import math
-import matplotlib.pyplot as plt
-import numpy as np
-
-from spiral_calc import rotate_points, generate_logarithmic_spiral_points
+from PIL import Image, ImageDraw, ImageFilter
 
 
-def simulate_milky_way_arms():
-    # 生成原始螺旋线
-    points = generate_logarithmic_spiral_points(a=0.1, b=0.2, num_points=500, end_angle=2 * math.pi)
+def create_high_quality_rounded_icons(input_path, output_folder, corner_radius=200, sizes=(128, 64, 32, 16)):
+    # 打开原始图片
+    image = Image.open(input_path).convert("RGBA")
 
-    points1 = rotate_points(points, math.pi * 30 / 180)
-    points2 = rotate_points(points, math.pi * 120 / 180)
-    points3 = rotate_points(points, math.pi * 210 / 180)
-    points4 = rotate_points(points, math.pi * 300 / 180)
+    # 确保图片为正方形
+    min_side = min(image.size)
+    image = image.crop((0, 0, min_side, min_side))
 
-    # 绘制四条螺旋线
-    x1, y1 = zip(*points1)
-    x2, y2 = zip(*points2)
-    x3, y3 = zip(*points3)
-    x4, y4 = zip(*points4)
+    for size in sizes:
+        # 调整图片尺寸
+        resized_image = image.resize((size, size), Image.Resampling.LANCZOS)
 
-    plt.plot(x1, y1, label="Spiral 1 (Perseus Arm)")
-    plt.plot(x2, y2, label="Spiral 2 ()")
-    plt.plot(x3, y3, label="Spiral 3 (Scutum-Centaurus Arm)")
-    plt.plot(x4, y4, label="Spiral 4 ()")
+        # 创建高质量的圆角蒙版
+        mask = Image.new("L", (size, size), 0)
+        draw = ImageDraw.Draw(mask)
+        draw.rounded_rectangle(
+            [(1, 1), (size - 1, size - 1)],  # 边缘留1像素，避免溢出
+            radius=corner_radius * size // min_side,  # 圆角半径按比例缩放
+            fill=255
+        )
+        mask = mask.filter(ImageFilter.SMOOTH)
 
-    plt.axis('equal')
-    plt.legend()
-    plt.title("Four Symmetric Logarithmic Spirals (Rotation)")
-    plt.show()
+        # 应用圆角蒙版
+        rounded_image = Image.new("RGBA", (size, size), (255, 255, 255, 0))  # 创建透明背景
+        rounded_image.paste(resized_image, (0, 0), mask=mask)
+
+        # 添加更强的锐化滤镜
+        if size / min_side < 0.1:
+            rounded_image = rounded_image.filter(ImageFilter.UnsharpMask(radius=1.0, percent=150, threshold=3))
+
+        # 保存为 PNG 格式
+        output_path = f"{output_folder}/icon_{size}x{size}.png"
+        rounded_image.save(output_path, format="PNG")
+        print(f"高质量圆角图标已保存到 {output_path}")
 
 
 if __name__ == '__main__':
-    simulate_milky_way_arms()
+    input_path = "../assets/chatgpt-古老的-蒸汽朋克机器人-保险箱3.webp"
+    output_folder = "../assets"
+
+    create_high_quality_rounded_icons(
+        input_path=input_path,
+        output_folder=output_folder,
+        corner_radius=100,
+        sizes=(512, 256, 128, 96, 64, 48, 32, 24, 16)
+    )
