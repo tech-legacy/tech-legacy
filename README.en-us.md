@@ -11,9 +11,9 @@
     <a href="https://github.com/tech-legacy/tech-legacy"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tech-legacy/tech-legacy/README.md">中文</a>
+    <a href="https://github.com/tech-legacy/tech-legacy/blob/dev/README.md">中文</a>
     ·
-    <a href="https://github.com/tech-legacy/tech-legacy/README.en-us.md">English</a>
+    <a href="https://github.com/tech-legacy/tech-legacy/blob/dev/README.en-us.md">English</a>
   </p>
 </div>
 
