@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/tech-legacy/tech-legacy">
-    <img src="https://github.com/tech-legacy/tech-legacy/blob/dev/assets/icon_256x256.png" alt="Logo" width="128" height="128">
+    <img src="https://github.com/tech-legacy/tech-legacy/blob/main/assets/icon_256x256.png" alt="Logo" width="128" height="128">
   </a>
 
   <h3 align="center">Tech Legacy</h3>
@@ -11,9 +11,9 @@
     <a href="https://github.com/tech-legacy/tech-legacy"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tech-legacy/tech-legacy/blob/dev/README.md">中文</a>
+    <a href="https://github.com/tech-legacy/tech-legacy/blob/main/README.md">中文</a>
     ·
-    <a href="https://github.com/tech-legacy/tech-legacy/blob/dev/README.en-us.md">English</a>
+    <a href="https://github.com/tech-legacy/tech-legacy/blob/main/README.en-us.md">English</a>
   </p>
 </div>
 
