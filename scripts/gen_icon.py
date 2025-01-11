@@ -1,3 +1,5 @@
+import os
+
 from PIL import Image, ImageDraw, ImageFilter
 
 
@@ -32,6 +34,8 @@ def create_high_quality_rounded_icons(input_path, output_folder, corner_radius=2
             rounded_image = rounded_image.filter(ImageFilter.UnsharpMask(radius=1.0, percent=150, threshold=3))
 
         # 保存为 PNG 格式
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
         output_path = f"{output_folder}/icon_{size}x{size}.png"
         rounded_image.save(output_path, format="PNG")
         print(f"高质量圆角图标已保存到 {output_path}")

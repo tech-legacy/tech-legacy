@@ -46,3 +46,6 @@ Testing
 vcpkg
 .idea
 .venv
+
+# here
+/assets/temp
