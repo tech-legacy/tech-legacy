@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/tech-legacy/tech-legacy">
-    <img src="https://github.com/tech-legacy/tech-legacy/blob/dev/assets/icon_256x256.png" alt="Logo" width="256" height="256">
+    <img src="https://github.com/tech-legacy/tech-legacy/blob/dev/assets/icon_256x256.png" alt="Logo" width="128" height="128">
   </a>
 
   <h3 align="center">Tech Legacy</h3>
